@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  @include respons(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respons(phone) {
+    font-size: 50%;
+  }
+}
+body {
+  font-family: sans-serif;
+}
+.text--center {
+  text-align: center;
+  color: $color-white !important;
+}

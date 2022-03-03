@@ -1,0 +1,38 @@
+.btn {
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  color: $color-black;
+  &__white {
+    background-color: $color-white;
+    max-width: 13rem;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgba($color-blue, 1);
+      color: $color-white;
+      @include respons(tab-land) {
+        color: $color-black;
+        background-color: $color-white;
+      }
+    }
+  }
+  &__red {
+    background-color: $color-primary;
+    color: $color-white;
+    transition: all 0.3s;
+    padding: 0.5rem;
+    &:hover {
+      background-color: $color-blue;
+    }
+    @include respons(tab-land) {
+      font-size: 1.4rem;
+      width: 100%;
+      padding: 0.2rem;
+    }
+    @include respons(tab-port) {
+      padding: 0.8rem;
+    }
+  }
+}

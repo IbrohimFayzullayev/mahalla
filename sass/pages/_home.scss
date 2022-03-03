@@ -1,0 +1,292 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  @include respons(tab-land) {
+    width: 90%;
+  }
+  @include respons(phone) {
+    width: 95%;
+  }
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  @include respons(tab-port) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.person {
+  display: flex;
+  gap: 2rem;
+  background-color: $color-primary;
+  padding: 3rem 4rem 3rem 3rem;
+  border-radius: 0.4rem;
+  color: $color-white;
+  @include respons(tab-land) {
+    padding: 2rem;
+  }
+  @include respons(tab-port) {
+    padding: 1rem;
+  }
+  @include respons(phone) {
+    display: grid;
+  }
+  &__img {
+    img {
+      border-radius: 0.5rem;
+      @include respons(tab-land) {
+        width: 20rem;
+        height: 20rem;
+      }
+      @include respons(phone) {
+        width: 12rem;
+        height: 12rem;
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.vibrant {
+  width: 35%;
+  @include respons(tab-port) {
+    width: 100%;
+  }
+  &__img {
+    img {
+      height: 100%;
+      @include respons(tab-land) {
+        height: 25rem;
+      }
+      @include respons(tab-port) {
+        height: 25rem;
+        width: 100%;
+      }
+    }
+  }
+  position: relative;
+  &__title {
+    position: absolute;
+    top: 5%;
+    color: $color-white;
+    background-color: $color-blue;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+  }
+  @include respons(tab-land) {
+  }
+}
+.services {
+  margin: 7rem 0;
+  @include respons(tab-port) {
+    margin: 4rem 0;
+  }
+  &--text {
+    width: 60%;
+    margin: 1rem 0 2rem 0;
+    @include respons(tab-port) {
+      width: 100%;
+    }
+  }
+  &__boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    @include respons(tab-port) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respons(phone) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+.service__box {
+  text-align: center;
+  box-shadow: 0 0.2rem 0.4rem #9999;
+  border-radius: 0.6rem;
+  padding: 3rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.2s;
+  @include respons(tab-port) {
+    padding: 1rem;
+    gap: 1rem;
+    flex-direction: row;
+  }
+  &--img {
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  &--info {
+    font-size: 1.6rem;
+    width: 60%;
+    line-height: 1.4;
+  }
+  &:hover {
+    box-shadow: 0 0.8rem 1.6rem #999;
+    transform: scale(1.05);
+    color: $color-primary;
+    @include respons(tab-land) {
+      box-shadow: 0 0.2rem 0.4rem #9999;
+      transform: none;
+      color: $color-text;
+    }
+  }
+}
+.facts {
+  background-image: linear-gradient(to right, #396a97be, #396a97bb),
+    url(../../img/billur_bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+  padding: 4rem 0;
+  color: $color-white;
+  @include respons(phone) {
+    padding: 2rem 0;
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 2rem 0;
+    width: 100%;
+    @include respons(phone) {
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 1rem;
+    }
+  }
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  &__number {
+    font-size: 2.4rem;
+    @include respons(tab-port) {
+      font-size: 2rem;
+    }
+  }
+  &__info {
+    font-size: 1.8rem;
+    @include respons(tab-port) {
+      font-size: 1.6rem;
+    }
+  }
+  &__icon {
+    font-size: 3rem;
+    color: $color-yellow;
+    width: 9rem;
+    height: 9rem;
+    border: 0.2rem solid $color-primary;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 1rem;
+    @include respons(tab-port) {
+      font-size: 2rem;
+      width: 7rem;
+      height: 7rem;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    transition: all 0.3s;
+    &:hover {
+      outline: 0.4rem solid $color-white;
+      outline-offset: 0.5rem;
+      @include respons(tab-land) {
+        outline: none;
+        outline-offset: none;
+      }
+    }
+  }
+}
+.members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 7rem 0;
+  align-items: center;
+  gap: 2.5rem;
+  @include respons(tab-port) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respons(phone) {
+    grid-template-columns: 1fr;
+  }
+}
+.member__info {
+  .text__box {
+    margin: 2rem 0;
+  }
+}
+.member {
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.4rem #999;
+  transition: all 0.2s;
+  &__heading {
+    font-size: 3.2rem;
+    color: $color-text;
+    @include respons(tab-land) {
+      font-size: 2.8rem;
+    }
+  }
+  @include respons(tab-port) {
+    width: 100%;
+  }
+  @include respons(phone) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__img {
+    @include respons(tab-port) {
+      height: 50vh;
+    }
+    img {
+      border-radius: 0.4rem 0.4rem 0 0;
+      width: 100%;
+      @include respons(tab-port) {
+        height: 100%;
+      }
+    }
+  }
+  &__info {
+    padding: 2rem 2rem;
+    &--name {
+      font-size: 2rem;
+    }
+    &--job {
+      font-size: 1.4rem;
+      font-style: italic;
+      margin: 1rem 0;
+      color: $color-primary;
+    }
+    &--text {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      color: $color-text;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0.8rem 1.6rem #999;
+    @include respons(tab-land) {
+      box-shadow: 0 0.2rem 0.4rem #999;
+    }
+  }
+}
